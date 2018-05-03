@@ -1,10 +1,7 @@
 package org.formacio.mvc;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,7 +35,7 @@ public class PersonalController {
 
 		@RequestMapping(path = "/consulta")
 		@ResponseBody
-		public String consulta(int id){
+		public String consulta( @RequestParam(required = false, defaultValue = "0") int id){
 			return getBaseDeDades().get(id);
 		}
 }
