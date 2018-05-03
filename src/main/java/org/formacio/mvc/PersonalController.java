@@ -35,4 +35,10 @@ public class PersonalController {
 		public String info(){
 			return "Hi ha " + getBaseDeDades().size() + " persones";
 		}
+
+		@RequestMapping(path = "/consulta")
+		@ResponseBody
+		public String consulta(int id){
+			return getBaseDeDades().get(id);
+		}
 }
