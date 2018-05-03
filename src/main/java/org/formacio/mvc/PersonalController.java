@@ -38,4 +38,10 @@ public class PersonalController {
 		public String consulta( @RequestParam(required = false, defaultValue = "0") int id){
 			return getBaseDeDades().get(id);
 		}
+
+		@RequestMapping(path="/persona/{id}")
+		@ResponseBody
+		public String consultaPathVariable(@PathVariable  int id){
+			return getBaseDeDades().get(id);
+		}
 }
